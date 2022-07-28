@@ -10,7 +10,14 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ['.tsx', 'ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@components': path.resolve(__dirname, './src/components'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@modules': path.resolve(__dirname, './src/modules'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@images': path.resolve(__dirname, './src/images'),
+    },
   },
   devtool: 'inline-source-map',
   plugins: [

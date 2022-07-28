@@ -1,5 +1,6 @@
 import { FC } from 'react';
+import { Login } from '@pages/login';
 
 export const App: FC = () => {
-  return <div className='text-3xl font-bold underline'>Hel2wlo1212</div>;
+  return <Login />;
 };

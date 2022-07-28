@@ -43,12 +43,15 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jsx-a11y": "^6.6.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.33.1",
+    "yup": "^0.32.11"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
