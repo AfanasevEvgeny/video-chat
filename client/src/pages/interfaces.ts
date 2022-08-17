@@ -1,6 +1,6 @@
 export interface PageRoute {
   path: string;
-  element: never;
+  element: unknown;
   private: boolean;
   routes: PageRoute[];
 }
