@@ -6,7 +6,6 @@ const rootRoute: PageRoute = {
   path: 'dashboard',
   element: <DashboardContainer />,
   private: false,
-  routes: [],
 };
 
 export default rootRoute;
