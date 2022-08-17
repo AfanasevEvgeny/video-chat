@@ -3,14 +3,29 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
+    tsconfigRootDir: './',
   },
   settings: {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          '@components': './src/components',
+          '@containers': './src/containers',
+          '@pages': './src/pages',
+          '@modules': './src/modules',
+          '@hooks': './src/hooks',
+          '@images': './src/images',
+        },
+        extensions: ['.ts', '.tsx'],
+      },
+    },
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
