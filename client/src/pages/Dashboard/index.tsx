@@ -5,6 +5,7 @@ import { DashboardContainer } from '@containers/DashboardContainer';
 const rootRoute: PageRoute = {
   path: 'dashboard',
   element: <DashboardContainer />,
+  baseLinkName: 'Dashboard',
   private: false,
 };
 

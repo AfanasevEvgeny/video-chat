@@ -8,15 +8,18 @@ const rootRoute: PageRoute = {
   path: 'auth/*',
   element: <AuthContainer />,
   private: false,
+  baseLinkName: 'Authorization',
   children: [
     {
-      path: 'signIn',
+      index: true,
       element: <SignInContainer />,
+      baseLinkName: 'Sign in',
       private: false,
     },
     {
       path: 'signUp',
       element: <SignUpContainer />,
+      baseLinkName: 'Sign up',
       private: false,
     },
   ],
