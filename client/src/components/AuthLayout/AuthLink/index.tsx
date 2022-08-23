@@ -9,7 +9,7 @@ export const AuthLink: FC<AuthLinkProps> = ({ linkName, to, isActive }) => {
       to={to}
       className={`px-3 text-sm text-slate-100 hover:text-purple-600 duration-300 ${textUnderlined} `}
     >
-      {linkName} {isActive}
+      {linkName}
     </Link>
   );
 };
