@@ -1,9 +1,10 @@
 import { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-import { FormProps, SignUpForm } from '../../interfaces';
+import { FormProps, SignUpForm } from '@containers/SignUpContainer/interfaces';
+import { mainInfoSchema } from '@containers/SignUpContainer/utils/yupSchemas';
 import { FormField } from '@components/FormField';
-import { mainInfoSchema } from '../utils/yupSchemas';
+// import { mainInfoSchema } from 'src/containers/SignUpContainer/utils/yupSchemas';
 
 export const MainInfoForm: FC<FormProps> = ({ onFulfilled }) => {
   const {

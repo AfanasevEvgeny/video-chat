@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { ProgressDotted } from '@components/ProgressDotted';
-import { MainInfoForm } from '@containers/SignUpContainer/FormsControl/MainInfoForm';
+import { MainInfoForm } from '@containers/SignUpContainer/MainInfoForm';
 
 export const SignUpContainer: FC = () => {
   const formsOrderedInfo = [
