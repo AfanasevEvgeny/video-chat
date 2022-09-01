@@ -1,48 +1,72 @@
-import { FC } from 'react';
-import { AuthCardList } from '@components/AuthCardList';
-import { AuthCardProps } from '@components/AuthCardList/interfaces';
-import rightImageSrc from '../../images/signUpPersonalInfo.png';
+import { FC, useState } from 'react';
+import { ProgressDotted } from '@components/ProgressDotted';
+import { MainInfoForm } from '@containers/SignUpContainer/FormsControl/MainInfoForm';
 
 export const SignUpContainer: FC = () => {
-  const authCardsDataList: AuthCardProps[] = [
+  const formsOrderedInfo = [
     {
-      title: 'Title 1',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and  industry.',
-      rightImageSrc: rightImageSrc,
+      formJsx: (
+        <MainInfoForm
+          onFulfilled={() => {
+            handleFormFulfillment(0);
+          }}
+        />
+      ),
+      label: 'Main info 1',
     },
     {
-      title: 'Title 2',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and  industry.',
-      rightImageSrc: rightImageSrc,
+      formJsx: (
+        <MainInfoForm
+          onFulfilled={() => {
+            handleFormFulfillment(1);
+          }}
+        />
+      ),
+      label: 'Main info 2',
     },
     {
-      title: 'Title 3',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and  industry. Test data test',
-      rightImageSrc: rightImageSrc,
+      formJsx: (
+        <MainInfoForm
+          onFulfilled={() => {
+            handleFormFulfillment(2);
+          }}
+        />
+      ),
+      label: 'Main info 3',
     },
     {
-      title: 'Title 4',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and  industry.',
-      rightImageSrc: rightImageSrc,
-    },
-    {
-      title: 'Title 5',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and  industry.',
-      rightImageSrc: rightImageSrc,
+      formJsx: (
+        <MainInfoForm
+          onFulfilled={() => {
+            handleFormFulfillment(3);
+          }}
+        />
+      ),
+      label: 'Main info 4',
     },
   ];
+
+  const handleFormFulfillment = (fulfilledFormIndex: number) => {
+    if (fulfilledFormIndex < formsOrderedInfo.length - 1) {
+      setActiveFormIndex(fulfilledFormIndex + 1);
+    }
+  };
+
+  const progressLabels = formsOrderedInfo.map((formInfo) => {
+    return { label: formInfo.label };
+  });
+
+  const [activeFormIndex, setActiveFormIndex] = useState(0);
+
   return (
-    <div>
-      <AuthCardList cardsListData={authCardsDataList} />
+    <div className='flex-1 py-12'>
+      <div className='w-[600px] mx-auto'>
+        <ProgressDotted
+          progressItems={progressLabels}
+          activeItemIdx={activeFormIndex}
+        />
+        {formsOrderedInfo[activeFormIndex].formJsx}
+      </div>
     </div>
   );
 };
-
-// idea: карточки https://www.creative-tim.com/blog/web-development/free-tailwind-css-templates-resources/
-// подсветка карточки после заполнения
-// модальное окно при открытии карточки сдвумя блоками поля + картинка
